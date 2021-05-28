@@ -1,0 +1,37 @@
+<section class="propery-binding">
+    <!-- <article>
+        <h3>Interpolation / Interpolação</h3>
+        <p>String renderizada com interpolação: {{ url }}</p>
+        <p>Resultado de 1 + 1 = {{ 1 + 1 }}</p>
+        <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor() }}</p>
+        <p>Curso Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
+    </article>
+
+    <article>
+        <img src="{{ urlImage }}" alt="">
+        <img [src]="urlImage" alt="">
+    </article> -->
+
+    <article>
+        <h3>Class e Style Binding</h3>
+        <div>
+            Selecione uma classe
+            <select #classe (change)="0">
+                <option value="success">Sucesso</option>
+                <option value="danger">Erro</option>
+                <option value="warning">Alerta</option>
+                <option value="info">Info</option>
+            </select>
+            <br />
+            <br />
+
+            <ngb-alert type="{{ classe.value }}">...</ngb-alert>
+            <ngb-alert type="danger" [style.display]="classe.value == 'danger' ? 'block' : 'none'">
+                Ops!!
+            </ngb-alert>
+            <!-- <p *ngFor="let alert of alerts">
+                <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
+              </p> -->
+        </div>
+    </article>
+</section>
