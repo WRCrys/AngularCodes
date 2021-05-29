@@ -1,5 +1,5 @@
-<section class="propery-binding">
-    <!-- <article>
+<!-- <section class="propery-binding"> -->
+<!-- <article>
         <h3>Interpolation / Interpolação</h3>
         <p>String renderizada com interpolação: {{ url }}</p>
         <p>Resultado de 1 + 1 = {{ 1 + 1 }}</p>
@@ -12,7 +12,7 @@
         <img [src]="urlImage" alt="">
     </article> -->
 
-    <article>
+<!-- <article>
         <h3>Class e Style Binding</h3>
         <div>
             Selecione uma classe
@@ -28,10 +28,41 @@
             <ngb-alert type="{{ classe.value }}">...</ngb-alert>
             <ngb-alert type="danger" [style.display]="classe.value == 'danger' ? 'block' : 'none'">
                 Ops!!
-            </ngb-alert>
-            <!-- <p *ngFor="let alert of alerts">
+            </ngb-alert> -->
+<!-- <p *ngFor="let alert of alerts">
                 <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
               </p> -->
+<!-- </div>
+    </article>
+</section> -->
+
+<section class="event-binding">
+    <article>
+        <h3>Event binding</h3>
+        <div>
+            <button (click)="botaoClicado()" class="btn btn-primary">
+                Me clique!
+            </button>
+            <br />
+            <br />
+            <p>Valor Atual: {{ valorAtual }}</p>
+            <p>Valor Salvo: {{ valorSalvo }}</p>
+            <input 
+                type="text" 
+                (keyup)="onKeyUp($event)" 
+                (keyup.enter)="salvarValor($event)" 
+                (blur)="salvarValor($event)" 
+                #campoInput
+            />
+            <br/>
+            <br/>
+            <span
+            (mouseover)="onMouseOverOut()"
+            (mouseout)="onMouseOverOut()"
+            [class.highlight]="isMouseOver"
+            >
+                Passe o mouse sobre mim
+            </span>
         </div>
     </article>
 </section>
